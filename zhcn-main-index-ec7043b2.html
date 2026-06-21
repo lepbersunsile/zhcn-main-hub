@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500彩票网官方 · 数字生活引导页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fde8cd 0%, #f9d9b3 35%, #f5cba0 70%, #f0c08e 100%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.2rem;
+            color: #3b2b1a;
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(6px);
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 8px 20px rgba(120, 70, 30, 0.12);
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            color: #6b3f1b;
+        }
+
+        .logo span {
+            display: inline-block;
+            background: #cf8f5c;
+            color: #fff;
+            padding: 0.1rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+            vertical-align: middle;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4d341d;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #b0733f;
+            color: #7b4a23;
+        }
+
+        /* 主卡片 */
+        .hero-card {
+            background: #fffffffa;
+            backdrop-filter: blur(4px);
+            border-radius: 44px;
+            padding: 2.8rem 2.5rem;
+            box-shadow: 0 20px 40px -12px rgba(100, 60, 25, 0.25);
+            margin-bottom: 2.8rem;
+            transition: box-shadow 0.25s;
+        }
+
+        .hero-card:hover {
+            box-shadow: 0 28px 48px -16px rgba(90, 55, 20, 0.3);
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: #472e16;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-title mark {
+            background: linear-gradient(130deg, #f7d7b0, #ecc29a);
+            padding: 0 0.3rem;
+            border-radius: 12px;
+            color: #3b270e;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 840px;
+            color: #4e3822;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-desc a {
+            color: #9b6739;
+            text-decoration: none;
+            font-weight: 500;
+            background: #f3e0cc;
+            padding: 0.1rem 0.6rem;
+            border-radius: 24px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .hero-desc a:hover {
+            background: #dbb792;
+            color: #2d1e0e;
+        }
+
+        .tagline {
+            display: inline-block;
+            background: #e3c9b1;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #3f2b16;
+            font-weight: 500;
+        }
+
+        /* 场景模块——三卡片 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .scene-item {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 12px 24px -8px rgba(80, 50, 20, 0.15);
+            transition: transform 0.2s, box-shadow 0.25s;
+        }
+
+        .scene-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 32px -12px rgba(70, 45, 20, 0.2);
+        }
+
+        .scene-icon {
+            font-size: 2rem;
+            display: inline-block;
+            background: #f1decb;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 18px;
+            margin-bottom: 0.8rem;
+        }
+
+        .scene-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #3f2c14;
+            font-weight: 600;
+        }
+
+        .scene-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4e3a25;
+        }
+
+        /* faq 摘要区 */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 8px 18px rgba(100, 65, 30, 0.08);
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: #412e16;
+            font-weight: 560;
+            border-left: 5px solid #c58e5a;
+            padding-left: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #f0e4d6;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            color: #55371c;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            color: #4f3c28;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .faq-a a {
+            color: #9b6739;
+            text-decoration: none;
+            background: #f2e1cf;
+            padding: 0.05rem 0.5rem;
+            border-radius: 24px;
+            transition: background 0.15s;
+        }
+
+        .faq-a a:hover {
+            background: #dbb792;
+        }
+
+        /* 底部 */
+        footer {
+            text-align: center;
+            color: #5d4530;
+            font-size: 0.85rem;
+            padding: 1.6rem 0 0.6rem;
+            border-top: 1px solid #e3cfba;
+            margin-top: 0.4rem;
+        }
+
+        footer a {
+            color: #5d3f24;
+            text-decoration: none;
+            border-bottom: 1px dashed #ba9b7c;
+        }
+
+        footer a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem 1.5rem;
+                border-radius: 40px;
+                gap: 0.6rem;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+
+            .hero-card {
+                padding: 2rem 1.5rem;
+                border-radius: 32px;
+            }
+
+            .hero-title {
+                font-size: 1.6rem;
+            }
+
+            .scene-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-section {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.4rem;
+            }
+
+            .hero-desc {
+                font-size: 0.95rem;
+            }
+
+            .scene-item {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 顶部导航 -->
+    <nav>
+        <div class="logo">五百<span>指引</span></div>
+        <div class="nav-links">
+            <a href="#core">核心</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">常见说明</a>
+        </div>
+    </nav>
+
+    <!-- hero 与核心介绍 -->
+    <div class="hero-card" id="core">
+        <div class="hero-title">
+            在数字生活里，<mark>保持轻松</mark> 的节奏
+        </div>
+        <div class="hero-desc">
+            <p>无论你是在探索兴趣、了解资讯，还是寻找一个可以驻足的信息角落，<a href="https://zhcn-main-500.com">500彩票网官方</a> 始终以平实的方式陪伴。这里没有纷扰的诱导，只有清晰的版块、流畅的浏览体验，以及一份持续多年的沉淀感。我们相信，好的平台不需要喧哗，只需要在你需要的时候，刚好出现。</p>
+            <p style="margin-top: 0.6rem;">从体育数据的呈现到休闲内容的组织，每一个细节都经过反复斟酌。如果你还未曾体验过，或许此刻就是一个温和的起点。</p>
+        </div>
+        <div class="tagline">✦ 温和 · 清晰 · 不打扰</div>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scene-grid" id="scenes">
+        <div class="scene-item">
+            <div class="scene-icon">⚡</div>
+            <h3>快速浏览信息</h3>
+            <p>赛事资讯、数据更新、趋势变化——信息流以最简洁的方式呈现。你不需要费力寻找入口，所有内容都在恰当的位置。一个干净的信息窗，比什么都重要。</p>
+        </div>
+        <div class="scene-item">
+            <div class="scene-icon">📘</div>
+            <h3>日常闲暇参考</h3>
+            <p>工作之余，点开熟悉的界面，看看最新的动态与变化。页面加载流畅，没有冗余弹窗，只有你真正需要的内容。就像翻开一本随手可得的笔记。</p>
+        </div>
+        <div class="scene-item">
+            <div class="scene-icon">🧩</div>
+            <h3>社区与交流</h3>
+            <p>通过平台，用户可以找到志趣相投的讨论氛围。这里尊重每个人的表达习惯，版块分明，沟通温和。没有过度包装的承诺，只有实在的功能。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 FAQ 摘要 -->
+    <div class="faq-section" id="faq">
+        <h2>常见说明 · 摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">◈ 这个平台主要提供什么内容？</div>
+            <div class="faq-a"><a href="https://zhcn-main-500.com">500彩票网官方</a> 是一个综合信息与数据呈现平台，涵盖多种兴趣领域，内容经过筛选与整理，帮助用户快速了解感兴趣的主题。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">◈ 是否包含注册或付费流程？</div>
+            <div class="faq-a">平台大部分浏览功能免费开放，部分深度内容或个性化功能可能需要注册账户。所有流程均透明、简洁，不会隐藏任何费用说明。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">◈ 移动端与桌面端体验一致吗？</div>
+            <div class="faq-a">是的，界面针对不同屏幕尺寸做了适配。无论是在手机还是电脑上，都能获得接近的浏览体验。按钮和链接都设计为易于点击的大小。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">◈ 如何确保信息可靠？</div>
+            <div class="faq-a">平台内容来源经过核实，并持续更新。如果用户发现任何存疑信息，可以通过页面反馈渠道告知。我们珍视每一位使用者的信任。</div>
+        </div>
+    </div>
+
+    <!-- 友好提示 / 引导句子 -->
+    <div style="background: #f7ede4; border-radius: 30px; padding: 1.2rem 1.8rem; margin-bottom: 1.8rem; text-align: center; box-shadow: 0 4px 12px rgba(80,50,25,0.06);">
+        <p style="font-size: 0.98rem; color: #4b3621;">如果你正在寻找一个风格稳定、信息组织清晰的站点，不妨试试 <a href="https://zhcn-main-500.com" style="color:#7a522f; text-decoration:none; font-weight:500; background:#e9d7c4; padding:0.2rem 1rem; border-radius:40px;">500彩票网官方</a> —— 它可能正是你期待的样子。</p>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p style="margin-bottom: 0.2rem;">保持简单 · 保持温和 · 一份数字空间的参考页</p>
+        <p>页面仅作为介绍引导，不构成任何承诺。更多信息请直接访问 <a href="https://zhcn-main-500.com">500彩票网官方</a>。</p>
+    </footer>
+</div>
+</body>
+</html>
